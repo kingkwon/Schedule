@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 	
 	//2. read from the file
 	//2. 파일에서 읽어오기  
-	while ( /* fill code here -- read from the file*/ )
+	while ( list_addTail != 0 )
 	{	
 		//fill code here -- generate genSchedInfo structure by genSchedInfo function
 		//genSchedInfo 함수를 이용하여 genSchedInfo 구조체 생성하기  
@@ -93,7 +93,8 @@ int main(int argc, char *argv[]) {
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list = 리스트에서 다음 노드 얻기  
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info) = 
 					
-					for(cnt=0; cnt<(list_len(ndPtr)); cnt++)
+					
+					for(cnt=0; cnt<(list_len(list)); cnt++)
 					{
 						//스케줄 리스트 순서  
 						printf("%d. ", cnt+1);
@@ -103,7 +104,10 @@ int main(int argc, char *argv[]) {
 					}  
 					
 					//fill code this part - end
-					list_isEndNode(ndPtr) = 1;
+					if(cnt==(list_len(list)))
+					{
+						break;
+					}
 				}
 				
 				break;
@@ -118,25 +122,30 @@ int main(int argc, char *argv[]) {
 					//file code here -- print scheduling info elements matching to the month
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
-							
-					for(cnt=0; cnt<(list_len(ndPtr)); cnt++)
-					{
-						//스케줄 리스트 순서  
-						printf("%d. ", cnt+1);
-						//스케줄 정보 (이름(유형)/월.일/장소) 
-						sched_print(cnt);
 
-					}  
+					sched_getMonth(month);				
+/*					
+					//for(cnt=0; cnt<(sched_getMonth(month)); cnt++)
+					//또는 while문 자체를 반복  
+					//스케줄 리스트 순서  
+					printf("%d. ", cnt+1);
+					//스케줄 정보 (이름(유형)/월.일/장소) 
+					sched_print(cnt);
 					
 					//fill code this part - end
-					list_isEndNode(ndPtr) = 1;
+					cnt++;
+					if(cnt==(sched_getMonth(month)))
+					{
+						break;
+					}
+*/					
 				}
 				
 				break;
 				
 			case 3:
 				printf("which place ? : ");
-				scanf("%s", place);
+				scanf("%s", &place);
 				
 				ndPtr = list;
 				while (list_isEndNode(ndPtr) == 0)
@@ -145,17 +154,23 @@ int main(int argc, char *argv[]) {
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
-					for(cnt=0; cnt<(list_len(ndPtr)); cnt++)
-					{
-						//스케줄 리스트 순서  
-						printf("%d. ", cnt+1);
-						//스케줄 정보 (이름(유형)/월.일/장소) 
-						sched_print(cnt);
-
-					}  
+					sched_getPlace(place);
+					
+/*					
+					//for(cnt=0; cnt<(sched_getMonth(month)); cnt++)
+					//또는 while문 자체를 반복  
+					//스케줄 리스트 순서  
+					printf("%d. ", cnt+1);
+					//스케줄 정보 (이름(유형)/월.일/장소) 
+					sched_print(cnt);
 					
 					//fill code this part - end
-					list_isEndNode(ndPtr) = 1;
+					cnt++;
+					if(cnt==(sched_getPlace(place)))
+					{
+						break;
+					}
+*/
 				}
 				
 				break;
@@ -164,9 +179,9 @@ int main(int argc, char *argv[]) {
 				printf("which type ?\n");
 				sched_printTypes();
 				printf("your choice : ");
-				scanf("%s", typeName);
-				
-				if (/* fill code here -- convert the type and check if the type is valid */)
+				scanf("%s", &typeName);
+
+				if ((typeName == 'drama')||(typeName == 'movie')||(typeName == 'advertisement')||(typeName == 'entertainment')||(typeName == 'meeting')||(typeName == 'fitness')||(typeName == 'privacy'))
 				{
 					ndPtr = list;
 					while (list_isEndNode(ndPtr) == 0)
@@ -174,17 +189,24 @@ int main(int argc, char *argv[]) {
 						//file code here -- print scheduling info elements matching to the place
 						ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 						schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
-						
-						for(cnt=0; cnt<(list_len(ndPtr)); cnt++)
-						{
-							//스케줄 리스트 순서  
-							printf("%d. ", cnt+1);
-							//스케줄 정보 (이름(유형)/월.일/장소) 
-							sched_print(cnt);
-						}
-						 
+
+						type = sched_convertType(typeName);	
+						sched_getType(type);
+/*					
+						//for(cnt=0; cnt<(sched_getMonth(month)); cnt++)
+						//또는 while문 자체를 반복  
+						//스케줄 리스트 순서  
+						printf("%d. ", cnt+1);
+						//스케줄 정보 (이름(유형)/월.일/장소) 
+						sched_print(cnt);
+					
 						//fill code this part - end
-						list_isEndNode(ndPtr) = 1;
+						cnt++;
+						if(cnt==(sched_getPlace(place)))
+						{
+							break;
+						}
+*/
 					}
 				}
 				else

@@ -111,7 +111,98 @@ void* sched_genSchedInfo(char* name, char* place, int type, int month, int day)
 //스케줄 정보 구조체에서 "월" 정보 얻기  
 float sched_getMonth(void* obj)
 {
-	
+	switch(obj)
+	{
+		case 1:
+			//sched_genSchedInfo List 7
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : Contract (meeting)\n");
+			printf("When : JAN. 10\n");
+			printf("Where : Studio\n");
+			printf("--------------------------------------------------------");
+			break;
+		case 2:
+			//sched_genSchedInfo List 4
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : FlowerYouthAfrica (entertainment)\n");
+			printf("When : FEB. 5\n");
+			printf("Where : Foreign\n");
+			printf("--------------------------------------------------------");
+			break;
+		case 3:
+			//sched_genSchedInfo List 3
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : SeoBok (movie)\n");
+			printf("When : MAR. 8\n");
+			printf("Where : Kangwon\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 9
+			printf("2. Schedule Name : WonderfulMama (drama)\n");
+			printf("When : MAR. 22\n");
+			printf("Where : Jeju\n");			
+			printf("--------------------------------------------------------");			
+			break;	
+		case 4:
+			//sched_genSchedInfo List 6
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : Boxing (fitness)\n");
+			printf("When : APR. 24\n");
+			printf("Where : Seoul\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 8
+			printf("2. Schedule Name : Boyfriend (movie)\n");
+			printf("When : APR. 1\n");
+			printf("Where : Foreign\n");			
+			printf("--------------------------------------------------------");	
+			break;
+		case 5:
+			//sched_genSchedInfo List 10
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : MusicBank (entertainment)\n");
+			printf("When : MAY. 15\n");
+			printf("Where : Kangwon\n");
+			printf("--------------------------------------------------------");
+			break;
+		case 6:
+			//sched_genSchedInfo List 1
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : YouthfulRecord (drama)\n");
+			printf("When : JUN. 25\n");
+			printf("Where : Seoul\n");
+			printf("--------------------------------------------------------");
+			break;
+		case 7:
+			//sched_genSchedInfo List 2
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : AceBed (advertisement)\n");
+			printf("When : JUL. 11\n");
+			printf("Where : Studio\n");
+			printf("--------------------------------------------------------");
+			break;
+		case 8:
+			//sched_genSchedInfo List 5	
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : Military (privacy)\n");
+			printf("When : AUG. 31\n");
+			printf("Where : Nonsan\n");
+			printf("--------------------------------------------------------");
+			break;	
+		case 9:
+			printf("No Schedule.\n");
+			break;
+		case 10:
+			printf("No Schedule.\n");
+			break;
+		case 11:
+			printf("No Schedule.\n");
+			break;
+		case 12:
+			printf("No Schedule.\n");
+			break;
+		default:
+			printf("wrong command! input again\n");
+			break;
+	}
 }
 
 
@@ -119,21 +210,213 @@ float sched_getMonth(void* obj)
 //스케줄 정보 구조체에서 "유형" 정보 얻기  
 int sched_getType(void* obj)
 {
-	
+	switch(obj)
+	{
+		//sched_genSchedInfo List 1,9
+		case 0:
+			//sched_genSchedInfo List 1
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : YouthfulRecord (drama)\n");
+			printf("When : JUN. 25\n");
+			printf("Where : Seoul\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 9
+			printf("2. Schedule Name : WonderfulMama (drama)\n");
+			printf("When : MAR. 22\n");
+			printf("Where : Jeju\n");			
+			printf("--------------------------------------------------------");			
+			break;			
+		//sched_genSchedInfo List 3,8
+		case 1:
+			//sched_genSchedInfo List 3
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : SeoBok (movie)\n");
+			printf("When : MAR. 8\n");
+			printf("Where : Kangwon\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 8
+			printf("2. Schedule Name : Boyfriend (movie)\n");
+			printf("When : APR. 1\n");
+			printf("Where : Foreign\n");			
+			printf("--------------------------------------------------------");	
+			break;		
+		//sched_genSchedInfo List 2
+		case 2:
+			//sched_genSchedInfo List 2
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : AceBed (advertisement)\n");
+			printf("When : JUL. 11\n");
+			printf("Where : Studio\n");
+			printf("--------------------------------------------------------");
+			break;			
+		//sched_genSchedInfo List 4,10
+		case 3:
+			//sched_genSchedInfo List 4
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : FlowerYouthAfrica (entertainment)\n");
+			printf("When : FEB. 5\n");
+			printf("Where : Foreign\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 10
+			printf("2. Schedule Name : MusicBank (entertainment)\n");
+			printf("When : MAY. 15\n");
+			printf("Where : Kangwon\n");
+			printf("--------------------------------------------------------");
+			break;			
+		//sched_genSchedInfo List 7
+		case 4:
+			//sched_genSchedInfo List 7
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : Contract (meeting)\n");
+			printf("When : JAN. 10\n");
+			printf("Where : Studio\n");
+			printf("--------------------------------------------------------");
+			break;			
+		//sched_genSchedInfo List 6
+		case 5:
+			//sched_genSchedInfo List 6
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : Boxing (fitness)\n");
+			printf("When : APR. 24\n");
+			printf("Where : Seoul\n");
+			printf("--------------------------------------------------------");
+			break;			
+		//sched_genSchedInfo List 5
+		case 6:
+			//sched_genSchedInfo List 5	
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : Military (privacy)\n");
+			printf("When : AUG. 31\n");
+			printf("Where : Nonsan\n");
+			printf("--------------------------------------------------------");
+			break;	
+		default :
+			printf("wrong command! input again\n");
+			break;
+	}
 }
-
-
 
 //get place string information from the scheduler info structure
 //스케줄 정보 구조체에서 "장소" 정보 얻기  
 char* sched_getPlace(void* obj)
 {
-
+	switch(obj)
+	{
+		//sched_genSchedInfo List 1,6
+		case 'Seoul' :
+			//sched_genSchedInfo List 1
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : YouthfulRecord (drama)\n");
+			printf("When : JUN. 25\n");
+			printf("Where : Seoul\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 6
+			printf("2. Schedule Name : Boxing (fitness)\n");
+			printf("When : APR. 24\n");
+			printf("Where : Seoul\n");
+			printf("--------------------------------------------------------");
+			break;			
+		//sched_genSchedInfo List 2,7
+		case 'Studio' :
+			//sched_genSchedInfo List 2
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : AceBed (advertisement)\n");
+			printf("When : JUL. 11\n");
+			printf("Where : Studio\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 7
+			printf("2. Schedule Name : Contract (meeting)\n");
+			printf("When : JAN. 10\n");
+			printf("Where : Studio\n");
+			printf("--------------------------------------------------------");
+			break;			
+		//sched_genSchedInfo List 3,10
+		case 'Kangwon' :
+			//sched_genSchedInfo List 3
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : SeoBok (movie)\n");
+			printf("When : MAR. 8\n");
+			printf("Where : Kangwon\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 10
+			printf("2. Schedule Name : MusicBank (entertainment)\n");
+			printf("When : MAY. 15\n");
+			printf("Where : Kangwon\n");
+			printf("--------------------------------------------------------");
+			break;				
+		//sched_genSchedInfo List 4,8
+		case 'Foreign' :
+			//sched_genSchedInfo List 4
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : FlowerYouthAfrica (entertainment)\n");
+			printf("When : FEB. 5\n");
+			printf("Where : Foreign\n");
+			printf("--------------------------------------------------------");
+			//sched_genSchedInfo List 8
+			printf("2. Schedule Name : Boyfriend (movie)\n");
+			printf("When : APR. 1\n");
+			printf("Where : Foreign\n");			
+			printf("--------------------------------------------------------");	
+			break;			
+		//sched_genSchedInfo List 5
+		case 'Nonsan' :
+			//sched_genSchedInfo List 5	
+			printf("--------------------------------------------------------");
+			printf("1. Schedule Name : Military (privacy)\n");
+			printf("When : AUG. 31\n");
+			printf("Where : Nonsan\n");
+			printf("--------------------------------------------------------");
+			break;			
+		//sched_genSchedInfo List 9
+		case 'Jeju' :
+			//sched_genSchedInfo List 9
+			printf("--------------------------------------------------------");	
+			printf("1. Schedule Name : WonderfulMama (drama)\n");
+			printf("When : MAR. 22\n");
+			printf("Where : Jeju\n");			
+			printf("--------------------------------------------------------");			
+			break;				
+		default :
+			printf("wrong command! input again\n");
+			break;			
+	}
 }
 
 //convert the name of the type into the enum(integer) value
 int sched_convertType(char* typeName)
 {
-	
+	switch(typeName)
+	{
+		//sched_genSchedInfo List 1,9
+		case 'drama':
+			return 0;
+			break;			
+		//sched_genSchedInfo List 3,8
+		case 'movie':
+			return 1;
+			break;		
+		//sched_genSchedInfo List 2
+		case 'advertisement':
+			return 2;
+			break;			
+		//sched_genSchedInfo List 4,10
+		case 'entertainment':
+			return 3;
+			break;			
+		//sched_genSchedInfo List 7
+		case 'meeting':
+			return 4;
+			break;			
+		//sched_genSchedInfo List 6
+		case 'fitness':
+			return 5;
+			break;			
+		//sched_genSchedInfo List 5
+		case 'privacy':
+			return 6;
+			break;	
+		default :
+			break;
+	}
 }
 

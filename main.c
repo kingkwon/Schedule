@@ -66,23 +66,39 @@ int main(int argc, char *argv[]) {
 	while(exit_flag == 0) 
 	{
 		//3. menu printing
+		//메뉴 출력  
 		//fill code here ---- 
+		printf("1. print all the schedules\n");
+		printf("2. search for schedules in the month\n");
+		printf("3. search for schedules in the place\n");
+		printf("4. search for specific type schedule\n");
+		printf("5. exit\n\n");
+		printf("  select an option : ");
 		
+/*		for(i=0; i<(list_len(list)); i++)
+		{
+			printf("%s %s %d %d %d\n", schedInfo.name, schedInfo.place, schedInfo.type, schedInfo.month, schedInfo.day);
+		}
+*/
+
 		//4. get option from keyboard
 		//fill code here ----
-		
+		//키보드로 옵션 받기  
+		scanf("%d", &option);		
 		
 		switch(option)
 		{
-			case 1: //print all the schedules
+			case 1: //print all the schedules = 모든 스케줄 출력  
 				printf("printing all the schedules in the scheduler.....\n\n\n");
 				
 				ndPtr = list;
 				while (list_isEndNode(ndPtr) == 0)
 				{
 					//file code here -- print count and each scheduling info element
-					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
-					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
+					//카운트와 각 스케줄 정보 요소 출력  
+					ndPtr = list_getNextNd(ndPtr); //get the next node from the list = 리스트에서 다음 노드 얻기  
+					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info) = 
+
 					
 					//fill code this part - end
 				}

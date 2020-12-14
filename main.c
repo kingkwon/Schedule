@@ -75,12 +75,6 @@ int main(int argc, char *argv[]) {
 		printf("5. exit\n\n");
 		printf("  select an option : ");
 		
-/*		for(i=0; i<(list_len(list)); i++)
-		{
-			printf("%s %s %d %d %d\n", schedInfo.name, schedInfo.place, schedInfo.type, schedInfo.month, schedInfo.day);
-		}
-*/
-
 		//4. get option from keyboard
 		//fill code here ----
 		//키보드로 옵션 받기  
@@ -98,9 +92,15 @@ int main(int argc, char *argv[]) {
 					//카운트와 각 스케줄 정보 요소 출력  
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list = 리스트에서 다음 노드 얻기  
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info) = 
-
+					for(cnt=0; cnt<ndPtr; cnt++)
+					{
+						printf("%d. Schedule Name : %s (%s)\n", cnt+1, schedInfo.name, schedInfo.type);
+						printf("When : %s. %d\n", schedInfo.month, schedInfo.day);
+						printf("Where : %s\n", schedInfo.place);
+					} 
 					
 					//fill code this part - end
+					list_isEndNode(ndPtr) = 1;
 				}
 				
 				break;

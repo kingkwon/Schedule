@@ -6,6 +6,7 @@
 //#define LIST_FIRST 0
 
 //node definition for linked list
+//연결된 목록에 대한 노드 정의  = node_t
 typedef struct node{
 	int index; //index of the node
 	void* obj; //object data
@@ -14,12 +15,14 @@ typedef struct node{
 } node_t;
 
 //Inner functions (cannot used at the outside of this file)
+//내부 함수(이 파일의 바깥에서는 사용하지 못 함) 
 node_t* genNode(void)
 {
 	node_t* ndPtr;
 	
 	//allocate memory for creating the node
-	ndPtr = (node_t*)malloc(sizeof(node_t));
+	//노드 생성을 위한 메모리 할당  
+	ndPtr = (node_t*)malloc(sizeof(node_t));	//구조체 node_t의 크기만큼 할당  
 	if (ndPtr != NULL)
 	{
 		ndPtr->next = NULL;
@@ -32,6 +35,7 @@ node_t* genNode(void)
 node_t* travelList(node_t* ndPtr, int offset)
 {
 	//return for wrong input
+	//잘못된 인풋에 대한 반환  
 	if (ndPtr == NULL || offset <-1)
 	{
 		printf("[ERROR] either ndPtr or offset is wrong! (offset : %i)\n", offset);
@@ -39,6 +43,7 @@ node_t* travelList(node_t* ndPtr, int offset)
 	}	
 	
 	//repeat travelling until the node is the end or offset becomes 0
+	//노드가 종료되거나 오프셋이 0이 될 때까지 탐색 반복  
 	while ( list_isEndNode(ndPtr) == 0 && offset != 0)
 	{
 		ndPtr = ndPtr->next;
@@ -64,7 +69,9 @@ int updateIndex(node_t* ndPtr)
 }
 
 //API function
+//API 함수  
 //functions for list creating and editing-----------------------------
+//목록 생성 및 편집을 위한 기능  
 
 /*
 	description : function for making and initializing a list
@@ -77,6 +84,7 @@ int updateIndex(node_t* ndPtr)
 	            2. initialize the members of the nodes
 	            3. return the generated node (this is the header node, which can be the list itself)
 */
+//목록 초기화 함수 -> main.c의 39번째 줄  
 void* list_genList(void)
 {
 	node_t* ndPtr = genNode(); //make the header node

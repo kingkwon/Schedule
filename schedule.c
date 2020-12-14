@@ -81,16 +81,28 @@ void sched_print(void* obj)
 
 
 //generating a structure of scheduling information
+//스케줄 정보 구조체 생성하기  
 void* sched_genSchedInfo(char* name, char* place, int type, int month, int day)
 {
 	schedInfo_t* schedPtr;
 	
 	//error handler
-
+	//오류 처리기  
 	//allocate memory and set the member variables
-	
+	//메모리 할당과 멤버 변수 설정
+	schedPtr = (int *)malloc(100*sizeof(int) );
+	schedPtr = (char *)malloc(300*sizeof(char) );
+	if (schedPtr == NULL)
+	{
+		printf("Dynamic Memory Allocation Error\n");
+		exit(1);
+	}	 
+
+	fread(&schedPtr, sizeof(schedPtr), 1, fp);
 	
 	return (void*)schedPtr;
+	
+	free(schedPtr);
 }
 
 

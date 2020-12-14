@@ -108,6 +108,7 @@ void* sched_genSchedInfo(char* name, char* place, int type, int month, int day)
 
 
 //get month information from the scheduler info structure
+//스케줄 정보 구조체에서 "월" 정보 얻기  
 float sched_getMonth(void* obj)
 {
 	
@@ -115,6 +116,7 @@ float sched_getMonth(void* obj)
 
 
 //get type information from the scheduler info structure
+//스케줄 정보 구조체에서 "유형" 정보 얻기  
 int sched_getType(void* obj)
 {
 	
@@ -123,6 +125,7 @@ int sched_getType(void* obj)
 
 
 //get place string information from the scheduler info structure
+//스케줄 정보 구조체에서 "장소" 정보 얻기  
 char* sched_getPlace(void* obj)
 {
 

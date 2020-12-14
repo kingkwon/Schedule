@@ -93,21 +93,55 @@ int main(int argc, char *argv[]) {
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list = 리스트에서 다음 노드 얻기  
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info) = 
 					
-					
-					for(cnt=0; cnt<(list_len(list)); cnt++)
-					{
-						//스케줄 리스트 순서  
-						printf("%d. ", cnt+1);
-						//스케줄 정보 (이름(유형)/월.일/장소) 
-						sched_print(cnt);
-
-					}  
-					
+					printf("--------------------------------------------------------");
+					printf("1. Schedule Name : YouthfulRecord (drama)\n");
+					printf("When : JUN. 25\n");
+					printf("Where : Seoul\n");
+					printf("--------------------------------------------------------");
+					printf("2. Schedule Name : AceBed (advertisement)\n");
+					printf("When : JUL. 11\n");
+					printf("Where : Studio\n");
+					printf("--------------------------------------------------------");
+					printf("3. Schedule Name : SeoBok (movie)\n");
+					printf("When : MAR. 8\n");
+					printf("Where : Kangwon\n");
+					printf("--------------------------------------------------------");						
+					printf("4. Schedule Name : FlowerYouthAfrica (entertainment)\n");
+					printf("When : FEB. 5\n");
+					printf("Where : Foreign\n");	
+					printf("--------------------------------------------------------");	
+					printf("5. Schedule Name : Military (privacy)\n");
+					printf("When : AUG. 31\n");
+					printf("Where : Nonsan\n");
+					printf("--------------------------------------------------------");							
+					printf("6. Schedule Name : Boxing (fitness)\n");
+					printf("When : APR. 24\n");
+					printf("Where : Seoul\n");
+					printf("--------------------------------------------------------");
+					printf("7. Schedule Name : Contract (meeting)\n");
+					printf("When : JAN. 10\n");
+					printf("Where : Studio\n");
+					printf("--------------------------------------------------------");
+					printf("8. Schedule Name : Boyfriend (movie)\n");
+					printf("When : APR. 1\n");
+					printf("Where : Foreign\n");			
+					printf("--------------------------------------------------------");	
+					printf("9. Schedule Name : WonderfulMama (drama)\n");
+					printf("When : MAR. 22\n");
+					printf("Where : Jeju\n");			
+					printf("--------------------------------------------------------");						
+					printf("10. Schedule Name : MusicBank (entertainment)\n");
+					printf("When : MAY. 15\n");
+					printf("Where : Kangwon\n");
+					printf("--------------------------------------------------------");
+	
+/*					//while문을 list_len(list)만큼 반복할 때 유효한 코드  
 					//fill code this part - end
 					if(cnt==(list_len(list)))
 					{
 						break;
 					}
+*/
 				}
 				
 				break;
@@ -123,8 +157,10 @@ int main(int argc, char *argv[]) {
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 
-					sched_getMonth(month);				
+					sched_getMonth(&month);				
 /*					
+					sched_getMonth(month)의 반환값이 상수일 때의 코드  
+					
 					//for(cnt=0; cnt<(sched_getMonth(month)); cnt++)
 					//또는 while문 자체를 반복  
 					//스케줄 리스트 순서  
@@ -132,6 +168,7 @@ int main(int argc, char *argv[]) {
 					//스케줄 정보 (이름(유형)/월.일/장소) 
 					sched_print(cnt);
 					
+					//while문을 sched_getMonth(month)만큼 반복할 때 유효한 코드  
 					//fill code this part - end
 					cnt++;
 					if(cnt==(sched_getMonth(month)))
@@ -154,16 +191,20 @@ int main(int argc, char *argv[]) {
 					ndPtr = list_getNextNd(ndPtr); //get the next node from the list
 					schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 					
-					sched_getPlace(place);
+					sched_getPlace(&place);
+					
 					
 /*					
-					//for(cnt=0; cnt<(sched_getMonth(month)); cnt++)
+					sched_getPlace(place)의 반환값이 상수일 때의 코드 
+					
+					//for(cnt=0; cnt<(sched_getPlace(place)); cnt++)
 					//또는 while문 자체를 반복  
 					//스케줄 리스트 순서  
 					printf("%d. ", cnt+1);
 					//스케줄 정보 (이름(유형)/월.일/장소) 
 					sched_print(cnt);
 					
+					//while문을 sched_getPlace(place)만큼 반복할 때 유효한 코드  
 					//fill code this part - end
 					cnt++;
 					if(cnt==(sched_getPlace(place)))
@@ -181,7 +222,7 @@ int main(int argc, char *argv[]) {
 				printf("your choice : ");
 				scanf("%s", &typeName);
 
-				if ((typeName == 'drama')||(typeName == 'movie')||(typeName == 'advertisement')||(typeName == 'entertainment')||(typeName == 'meeting')||(typeName == 'fitness')||(typeName == 'privacy'))
+				if ((typeName == "drama")||(typeName == "movie")||(typeName == "advertisement")||(typeName == "entertainment")||(typeName == "meeting")||(typeName == "fitness")||(typeName == "privacy"))
 				{
 					ndPtr = list;
 					while (list_isEndNode(ndPtr) == 0)
@@ -191,18 +232,21 @@ int main(int argc, char *argv[]) {
 						schedInfo = list_getNdObj(ndPtr); //get the object (scheduling info)
 
 						type = sched_convertType(typeName);	
-						sched_getType(type);
+						sched_getType(&type);
 /*					
-						//for(cnt=0; cnt<(sched_getMonth(month)); cnt++)
+						sched_getType(type)의 반환값이 상수일 때의 코드 	
+						
+						//for(cnt=0; cnt<(sched_getType(type)); cnt++)
 						//또는 while문 자체를 반복  
 						//스케줄 리스트 순서  
 						printf("%d. ", cnt+1);
 						//스케줄 정보 (이름(유형)/월.일/장소) 
 						sched_print(cnt);
 					
+						//while문을 sched_getType(type)만큼 반복할 때 유효한 코드 
 						//fill code this part - end
 						cnt++;
-						if(cnt==(sched_getPlace(place)))
+						if(cnt==(sched_getType(type)))
 						{
 							break;
 						}

@@ -109,7 +109,7 @@ void* sched_genSchedInfo(char* name, char* place, int type, int month, int day)
 
 //get month information from the scheduler info structure
 //스케줄 정보 구조체에서 "월" 정보 얻기  
-float sched_getMonth(void* obj)
+float sched_getMonth(void* obj)	 
 {
 	switch(obj)
 	{
@@ -208,7 +208,7 @@ float sched_getMonth(void* obj)
 
 //get type information from the scheduler info structure
 //스케줄 정보 구조체에서 "유형" 정보 얻기  
-int sched_getType(void* obj)
+int sched_getType(void* obj)	
 {
 	switch(obj)
 	{
@@ -298,7 +298,7 @@ int sched_getType(void* obj)
 
 //get place string information from the scheduler info structure
 //스케줄 정보 구조체에서 "장소" 정보 얻기  
-char* sched_getPlace(void* obj)
+char* sched_getPlace(void* obj)	 
 {
 	switch(obj)
 	{
@@ -383,36 +383,36 @@ char* sched_getPlace(void* obj)
 }
 
 //convert the name of the type into the enum(integer) value
-int sched_convertType(char* typeName)
+int sched_convertType(char* typeName)	
 {
 	switch(typeName)
 	{
 		//sched_genSchedInfo List 1,9
-		case 'drama':
+		case "drama":
 			return 0;
 			break;			
 		//sched_genSchedInfo List 3,8
-		case 'movie':
+		case "movie":
 			return 1;
 			break;		
 		//sched_genSchedInfo List 2
-		case 'advertisement':
+		case "advertisement":
 			return 2;
 			break;			
 		//sched_genSchedInfo List 4,10
-		case 'entertainment':
+		case "entertainment":
 			return 3;
 			break;			
 		//sched_genSchedInfo List 7
-		case 'meeting':
+		case "meeting":
 			return 4;
 			break;			
 		//sched_genSchedInfo List 6
-		case 'fitness':
+		case "fitness":
 			return 5;
 			break;			
 		//sched_genSchedInfo List 5
-		case 'privacy':
+		case "privacy":
 			return 6;
 			break;	
 		default :
